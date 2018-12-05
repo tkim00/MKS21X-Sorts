@@ -1,18 +1,18 @@
 public class Sorts{
   public static void main(String[] args) {
-    int [] sample = {7, 55, 41, -8, 121};
+    int [] sample = {5, 1, 12, -5, 16, 2, 12, 14};
     System.out.println("Original:");
     for (int i = 0; i < sample.length; i++) {
       System.out.println(sample[i]);
     }
 
-    selectionsort(sample);
+    selectionSort(sample);
     System.out.println("Modified:");
     for (int i = 0; i < sample.length; i++) {
       System.out.println(sample[i]);
     }
   }
-  public static void selectionsort(int [] ary) {
+  public static void selectionSort(int [] ary) {
     /*
     int [] temp = new int [ary.length];
     for(int i = 0; i < ary.length; i++){
@@ -21,19 +21,27 @@ public class Sorts{
     int x = 0;*/
     for (int i = 0; i < ary.length; i++) {
       ary[i] = smallestFinder(i, ary);
+      System.out.println();
     }
   }
   public static int smallestFinder(int x, int [] ary) {
     int smallest = ary[x];
+    //int j = 0;
     for (int i = x; i < ary.length; i++) {
       if (smallest > ary[i]) {
         smallest = ary[i];
+        //j = i;
       }
+      System.out.print(""+ary[i]+" ");
     }
+    //ary[j] = ary[x];
+    System.out.println();
     for (int i = x; i < ary.length; i++) {
       if(ary[i] == smallest){
         ary[i] = ary[x];
+        break;
       }
+      System.out.print(""+ary[i]+" ");
     }
     return smallest;
   }
