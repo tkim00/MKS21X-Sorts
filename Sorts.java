@@ -21,7 +21,7 @@ public class Sorts{
     int x = 0;*/
     for (int i = 0; i < ary.length; i++) {
       ary[i] = smallestFinder(i, ary);
-      System.out.println();
+      //System.out.println();
     }
   }
   public static int smallestFinder(int x, int [] ary) {
@@ -32,7 +32,7 @@ public class Sorts{
         smallest = ary[i];
         //j = i;
       }
-      System.out.print(""+ary[i]+" ");
+      //System.out.print(""+ary[i]+" ");
     }
     //ary[j] = ary[x];
     System.out.println();
@@ -41,7 +41,7 @@ public class Sorts{
         ary[i] = ary[x];
         break;
       }
-      System.out.print(""+ary[i]+" ");
+      //System.out.print(""+ary[i]+" ");
     }
     return smallest;
   }
