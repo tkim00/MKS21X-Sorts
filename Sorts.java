@@ -1,13 +1,17 @@
 public class Sorts{
   public static void main(String[] args) {
     int [] sample = {5, 1, 12, -5, 16, 2, 12, 14};
-    System.out.println("Original:");
-    for (int i = 0; i < sample.length; i++) {
-      System.out.println(sample[i]);
-    }
-
-    selectionSort(sample);
-    System.out.println("Modified:");
+    // System.out.println("Original:");
+    // for (int i = 0; i < sample.length; i++) {
+    //   System.out.println(sample[i]);
+    // }
+    //
+    // selectionSort(sample);
+    // System.out.println("Modified:");
+    // for (int i = 0; i < sample.length; i++) {
+    //   System.out.println(sample[i]);
+    // }
+    bubbleSort(sample);
     for (int i = 0; i < sample.length; i++) {
       System.out.println(sample[i]);
     }
@@ -44,5 +48,17 @@ public class Sorts{
       //System.out.print(""+ary[i]+" ");
     }
     return smallest;
+  }
+  public static void bubbleSort(int[] data) {
+    int x = 0;
+    for (int j = 0; j < data.length - 1; j++) {
+      for (int i = 0; i < data.length - 1 - j; i++) {
+        if (data[i] > data[i+1]) {
+          x = data[i];
+          data[i] = data[i+1];
+          data[x+1] = x;
+        }
+      }
+    }
   }
 }
