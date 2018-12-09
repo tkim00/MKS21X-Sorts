@@ -56,7 +56,7 @@ public class Sorts{
         if (data[i] > data[i+1]) {
           x = data[i];
           data[i] = data[i+1];
-          data[x+1] = x;
+          data[i+1] = x;
         }
       }
     }
