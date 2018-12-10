@@ -43,7 +43,7 @@ public class Sorts{
     for (int i = x; i < ary.length; i++) {
       if(ary[i] == smallest){
         ary[i] = ary[x];
-        break;
+        i = ary.length;
       }
       //System.out.print(""+ary[i]+" ");
     }
@@ -51,13 +51,18 @@ public class Sorts{
   }
   public static void bubbleSort(int[] data) {
     int x = 0;
+    boolean isSwapped = false;
     for (int j = 0; j < data.length - 1; j++) {
       for (int i = 0; i < data.length - 1 - j; i++) {
         if (data[i] > data[i+1]) {
           x = data[i];
           data[i] = data[i+1];
           data[i+1] = x;
+          isSwapped = true;
         }
+      }
+      if (isSwapped == false) {
+        j = data.length;
       }
     }
   }
