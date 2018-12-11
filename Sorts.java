@@ -39,7 +39,7 @@ public class Sorts{
       //System.out.print(""+ary[i]+" ");
     }
     //ary[j] = ary[x];
-    System.out.println();
+    //System.out.println();
     for (int i = x; i < ary.length; i++) {
       if(ary[i] == smallest){
         ary[i] = ary[x];
@@ -64,6 +64,20 @@ public class Sorts{
       if (isSwapped == false) {
         j = data.length;
       }
+    }
+  }
+
+  public static void insertionSort(int [] ary) {
+    int x;
+    int c;
+    for (int i = 1; i < ary.length; i++) {
+      x = ary[i];
+      c = 1;
+      while (c != i + 1 && x < ary[i - c]) {
+        ary[i - c + 1] = ary[i - c];
+        c++;
+      }
+      ary[i - c + 1] = x;
     }
   }
 }
